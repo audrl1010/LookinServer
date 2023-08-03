@@ -62,7 +62,7 @@ let package = Package(
             path: "Src/Base",
             publicHeadersPath: "",
             cxxSettings: [
-                .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1", .when(configuration: .debug))
+                .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1", .when(configuration: .debug)),
                 
                 .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1", .when(configuration: .release))
             ]
