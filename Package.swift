@@ -31,7 +31,10 @@ let package = Package(
             ],
             cxxSettings: [
                 .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1", .when(configuration: .debug)),
-                .define("SPM_LOOKIN_SERVER_ENABLED", to: "1", .when(configuration: .debug))
+                .define("SPM_LOOKIN_SERVER_ENABLED", to: "1", .when(configuration: .debug)),
+                
+                .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1", .when(configuration: .release)),
+                .define("SPM_LOOKIN_SERVER_ENABLED", to: "1", .when(configuration: .release))
             ]
         ),
         .target(
@@ -40,11 +43,17 @@ let package = Package(
             path: "Src/Swift",
             cxxSettings: [
                 .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1", .when(configuration: .debug)),
-                .define("SPM_LOOKIN_SERVER_ENABLED", to: "1", .when(configuration: .debug))
+                .define("SPM_LOOKIN_SERVER_ENABLED", to: "1", .when(configuration: .debug)),
+                
+                .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1", .when(configuration: .release)),
+                .define("SPM_LOOKIN_SERVER_ENABLED", to: "1", .when(configuration: .release))
             ],
             swiftSettings: [
                 .define("SHOULD_COMPILE_LOOKIN_SERVER", .when(configuration: .debug)),
-                .define("SPM_LOOKIN_SERVER_ENABLED", .when(configuration: .debug))
+                .define("SPM_LOOKIN_SERVER_ENABLED", .when(configuration: .debug)),
+                
+                .define("SHOULD_COMPILE_LOOKIN_SERVER", .when(configuration: .release)),
+                .define("SPM_LOOKIN_SERVER_ENABLED", .when(configuration: .release))
             ]
         ),
         .target(
@@ -54,6 +63,8 @@ let package = Package(
             publicHeadersPath: "",
             cxxSettings: [
                 .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1", .when(configuration: .debug))
+                
+                .define("SHOULD_COMPILE_LOOKIN_SERVER", to: "1", .when(configuration: .release))
             ]
         )
     ]
